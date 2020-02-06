@@ -258,9 +258,81 @@
     
     <!--页面主要内容-->
     <main class="lyear-layout-content">
-      
+      <!--上面的四个图-->
       <div class="container-fluid">
-        
+        <div class="row">
+          <div class="col-sm-6 col-lg-3">
+            <div class="card bg-primary">
+              <div class="card-body clearfix">
+                <div class="pull-right">
+                  <p class="h6 text-white m-t-0">订单总数</p>
+                  <p class="h3 text-white m-b-0">106143</p>
+                </div>
+                <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-currency-cny fa-1-5x"></i></span> </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <div class="card bg-danger">
+              <div class="card-body clearfix">
+                <div class="pull-right">
+                  <p class="h6 text-white m-t-0">有评论标签的订单数</p>
+                  <p class="h3 text-white m-b-0">105840</p>
+                </div>
+                <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-account fa-1-5x"></i></span> </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <div class="card bg-success">
+              <div class="card-body clearfix">
+                <div class="pull-right">
+                  <p class="h6 text-white m-t-0">满意度</p>
+                  <p class="h3 text-white m-b-0">0.93122</p>
+                </div>
+                <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-arrow-down-bold fa-1-5x"></i></span> </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <div class="card bg-purple">
+              <div class="card-body clearfix">
+                <div class="pull-right">
+                  <p class="h6 text-white m-t-0">冒泡页预估距离</p>
+                  <p class="h3 text-white m-b-0">5352.73m</p>
+                </div>
+                <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-comment-outline fa-1-5x"></i></span> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 在这里填写内容 新加的图-->
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header"><h4>线形图 - 1</h4></div>
+              <div class="card-body">
+                <img id="chart-line-new-1" width="400" height="250" src="../static/images/logo-sidebar.png"/>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header"><h4>线形图 - 2</h4></div>
+              <div class="card-body">
+                <canvas id="chart-line-new-2" width="400" height="250"></canvas>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- 在这里填写内容 原来的两个图-->
         <div class="row">
           
           <div class="col-lg-6">

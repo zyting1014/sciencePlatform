@@ -28,11 +28,11 @@
         
         <nav class="sidebar-main">
           <ul class="nav nav-drawer">
-            <li class="nav-item active"> <a href="index/"><i class="mdi mdi-home"></i> 首页</a> </li>
+            <li class="nav-item active"> <a href="{% url 'index' %}"><i class="mdi mdi-home"></i> 首页</a> </li>
             <li class="nav-item nav-item-has-subnav">
               <a href="javascript:void(0)"><i class="mdi mdi-palette"></i> 数据调研</a>
               <ul class="nav nav-subnav">
-                <li><a href="comment/">用户满意度数据</a></li>
+                <li><a href="{% url 'comment' %}">用户满意度数据</a></li>
                 <li> <a href="lyear_ui_buttons.html">按钮</a> </li>
                 <li> <a href="lyear_ui_cards.html">卡片</a> </li>
                 <li> <a href="lyear_ui_grid.html">格栅</a> </li>
