@@ -6,7 +6,10 @@ function shuffle(o){ //v1.0
 }
 
 var colors = [
-	['#D3B6C6', '#4B253A'], ['#FCE6A4', '#EFB917'], ['#BEE3F7', '#45AEEA'], ['#F8F9B6', '#D2D558'], ['#F4BCBF', '#D43A43']
+	['#FCE6A4', '#EFB917'],
+	['#DAEAD0','#F0B694'],
+	['#F8F9B6', '#D2D558'],
+	['#F4BCBF', '#D43A43']
 ], circles = [];
 
 var li = [59.657,58.621,64.529,57.482,0] // 要填入的值
