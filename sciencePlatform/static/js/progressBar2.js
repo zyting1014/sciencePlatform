@@ -5,9 +5,9 @@ function shuffle(o){ //v1.0
 	return o;
 }
 
-var colors = [
-	['#8491C3', '#8CD2BC']
-	['#D3B6C6', '#4B253A'],
+var colors2 = [
+	// ['#8491C3', '#8CD2BC']
+	// ['#D3B6C6', '#4B253A'],
 	['#FCE6A4', '#EFB917'],
 	['#BEE3F7', '#45AEEA'],
 	['#F5F5F2', '#CCA6BF'],
@@ -26,7 +26,7 @@ for (var i = 6; i <= 11; i++) {
 		value:		percentage,
 		radius:     60,
 		width:      10,
-		colors:     colors[i - 6]
+		colors:     colors2[i - 6]
 	}));
 }
 
