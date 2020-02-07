@@ -1,0 +1,16 @@
+#canvas .circle ,#canvas_ .circle {
+	display: inline-block;
+	margin: 2em;
+}
+#canvas button,#canvas_ button{
+    margin: 1.5em;
+	width: 6.75em;
+	border: none; /**轮廓 & 边框*/
+	outline: none;
+	font-family: "Material Design Icons";
+}
+
+.circles-decimals {
+	font-size: .4em;
+}
+
