@@ -1,25 +1,19 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="zh">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<title>用户满意度 - 路线投诉模型(cpo)科研实验平台</title>
-<link rel="icon" href="favicon.ico" type="image/ico">
-<meta name="keywords" content="LightYear,光年,后台模板,后台管理系统,光年HTML模板">
+<title>首页 - 路线投诉模型(cpo)科研实验平台</title>
+<link rel="icon" href="../static/images/favicon.ico" type="image/ico">
+<meta name="keywords" content="分布式数据平台,机器学习,科研实验平台,可视化">
 <meta name="description" content="LightYear是一个基于Bootstrap v3.3.7的后台管理系统的HTML模板。">
-<meta name="author" content="tina">
+<meta name="author" content="yinqi">
 <link href="../static/css/bootstrap.min.css" rel="stylesheet">
 <link href="../static/css/materialdesignicons.min.css" rel="stylesheet">
 <link href="../static/css/style.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="../static/css/progressbar/normalize.css" />
-<link rel="stylesheet" type="text/css" href="../static/css/progressbar/default.css">
-<link rel="stylesheet" type="text/css" href="../static/css/progressbar/progressBar.css">
-<link rel="stylesheet" type="text/css" href="../static/css/progressbar/demo.css">
-
-<!--日期选择插件-->
-<link rel="stylesheet" href="../static/js/bootstrap-datepicker/bootstrap-datepicker3.min.css">
 </head>
-  
+
 <body>
 <div class="lyear-layout-web">
   <div class="lyear-layout-container">
@@ -34,7 +28,7 @@
 
         <nav class="sidebar-main">
           <ul class="nav nav-drawer">
-            <li class="nav-item active"> <a href="{% url 'index' %}"><i class="mdi mdi-home"></i> 首页</a> </li>
+            <li class="nav-item active"> <a href="{% url 'index' %}"><i class="mdi mdi-home"></i>首页</a> </li>
             <li class="nav-item nav-item-has-subnav">
               <a href="javascript:void(0)"><i class="mdi mdi-palette"></i> 数据调研</a>
               <ul class="nav nav-subnav">
@@ -56,7 +50,7 @@
               </ul>
             </li>
             <li class="nav-item nav-item-has-subnav">
-              <a href="javascript:void(0)"><i class="mdi mdi-format-align-justify"></i> 路线去重</a>
+              <a href="javascript:void(0)"><i class="mdi mdi-format-align-justify"></i> 数据详情</a>
               <ul class="nav nav-subnav">
                 <li> <a href="{% url 'dropRoute' %}">路线去重结果</a> </li>
                 <li> <a href="lyear_forms_elements.html">基本元素</a> </li>
@@ -136,7 +130,7 @@
             </div>
             <span class="navbar-page-title"> 首页 </span>
           </div>
-          
+
           <ul class="topbar-right">
             <li class="dropdown dropdown-profile">
               <a href="javascript:void(0)" data-toggle="dropdown">
@@ -209,29 +203,29 @@
 				<li class="drop-skin-li clearfix">
                   <span class="inverse">
                     <input type="radio" name="header_bg" value="default" id="header_bg_1" checked>
-                    <label for="header_bg_1"></label>                      
-                  </span>                                                    
-                  <span>                                                     
+                    <label for="header_bg_1"></label>
+                  </span>
+                  <span>
                     <input type="radio" name="header_bg" value="color_2" id="header_bg_2">
-                    <label for="header_bg_2"></label>                      
-                  </span>                                                    
-                  <span>                                                     
+                    <label for="header_bg_2"></label>
+                  </span>
+                  <span>
                     <input type="radio" name="header_bg" value="color_3" id="header_bg_3">
                     <label for="header_bg_3"></label>
                   </span>
                   <span>
                     <input type="radio" name="header_bg" value="color_4" id="header_bg_4">
-                    <label for="header_bg_4"></label>                      
-                  </span>                                                    
-                  <span>                                                     
+                    <label for="header_bg_4"></label>
+                  </span>
+                  <span>
                     <input type="radio" name="header_bg" value="color_5" id="header_bg_5">
-                    <label for="header_bg_5"></label>                      
-                  </span>                                                    
-                  <span>                                                     
+                    <label for="header_bg_5"></label>
+                  </span>
+                  <span>
                     <input type="radio" name="header_bg" value="color_6" id="header_bg_6">
-                    <label for="header_bg_6"></label>                      
-                  </span>                                                    
-                  <span>                                                     
+                    <label for="header_bg_6"></label>
+                  </span>
+                  <span>
                     <input type="radio" name="header_bg" value="color_7" id="header_bg_7">
                     <label for="header_bg_7"></label>
                   </span>
@@ -279,230 +273,74 @@
 			</li>
             <!--切换主题配色-->
           </ul>
-          
+
         </div>
       </nav>
-      
+
     </header>
     <!--End 头部信息-->
+
     
     <!--页面主要内容-->
     <main class="lyear-layout-content">
-      <!--上面的四个图-->
+      
       <div class="container-fluid">
 
-
-
+        
         <div class="row">
-
-          <div class="col-lg-4">
+          <div class="col-md-6">
+            <div class="card" id="leftInfo">
+              <div class="card-header"><h4>控制台输出</h4></div>
+              <h3><br/>
+                &emsp;&emsp;选用的数据为2019-12-16 08:00<br/>
+                &emsp;&emsp;城市为3_guangzhou数据<br/>
+                &emsp;&emsp;路线条数过滤阈值为80，相似度去重阈值为5<br/>
+                &emsp;&emsp;originRdd_first cnt : 18263465<br/>
+                &emsp;&emsp;分组后的订单有 : 631773<br/><br/><br/><br/>
+              </h3>
+            </div>
+          </div>
+          <div class="col-md-6">
             <div class="card">
-              <div class="card-header"><h4>日期选择</h4></div>
+              <div class="card-header"><h4>去重结果</h4></div>
               <div class="card-body">
-                <div class="input-daterange input-group">
-                  <input class="form-control js-datepicker" data-date-format="yyyy-mm-dd" type="text" id="example-daterange1" name="example-daterange1" placeholder="2019.10.20">
-                  <span class="input-group-addon"><i class="mdi mdi-chevron-right"></i></span>
-                  <input class="form-control js-datepicker" data-date-format="yyyy-mm-dd" type="text" id="example-daterange2" name="example-daterange2" placeholder="2019.10.21">
+ 
+                <ul id="myTabs" class="nav nav-tabs" role="tablist">
+                  <li class="active"><a href="#method1" id="similarity-tab" role="tab" data-toggle="tab">相似度去重</a></li>
+                  <li><a href="#method2" role="tab" id="percent-tab" data-toggle="tab">分位数去重</a></li>
+                  <li><a href="#method3" role="tab" id="mix-tab" data-toggle="tab">混合去重</a></li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                  <div class="tab-pane fade active in" id="method1">
+                    <p>
+                      替换前topN路线的sim值为:0.979223158666178<br/>
+                      替换后topN路线的sim值为:0.9785513619152315<br/>
+                      替换前订单平均路线数为:129.8018443874435,替换后订单平均路线数为:128.82674972517407<br/>
+                      时间最短路保留比例为:0.993587394650055<br/>
+                      过滤前含有避堵准出订单的总订单数为 : 2337<br/>
+                      替换前多路线的总命中条数为 : 141762.0，替换后多路线的总命中条数为 : 141086.0，保留比例为0.995231444251633<br/>
+                    </p>
+                  </div>
+                  <div class="tab-pane fade" id="method2">
+                    <p>
+                      替换后topN路线的sim值为:0.9788078661292293<br/>
+                      替换前订单平均路线数为:129.8018443874435,替换后订单平均路线数为:76.64399657994382<br/>
+                      时间最短路保留比例为:0.9860266275803102<br/>
+                      过滤前含有避堵准出订单的总订单数为 : 2337<br/>
+                      删除前避堵准出的订单有:1543，删除后避堵准出的订单有:1543<br/>
+                      替换前多路线的总命中条数为 : 141762.0，替换后多路线的总命中条数为 : 141577.0，保留比例为0.9986949958380948
+                    </p>
+                  </div>
+                  <div class="tab-pane fade" id="method3">
+                    <p>原名陈文统，中国著名武侠小说家，与金庸、古龙并称为中国武侠小说三大宗师，被誉为新派武侠小说的开山祖师。代表作品有《白发魔女传》、《七剑下天山》、《萍踪侠影录》、《云海玉弓缘》等。在评价自己的武侠创作地位时，梁羽生曾说：“开风气也，梁羽生；发扬光大者，金庸。”另有笔名陈鲁、冯瑜宁、梁慧如、李夫人、冯显华、幻萍、佟硕之、凤雏生。</p>
+                  </div>
                 </div>
+                
               </div>
             </div>
           </div>
-
+          
         </div>
-
-
-
-
-        <div class="row">
-          <div class="col-sm-6 col-lg-3">
-            <div class="card bg-primary">
-              <div class="card-body clearfix">
-                <div class="pull-right">
-                  <p class="h6 text-white m-t-0">订单总数</p>
-                  <p class="h3 text-white m-b-0">106143</p>
-                </div>
-                <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-currency-cny fa-1-5x"></i></span> </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-3">
-            <div class="card bg-danger">
-              <div class="card-body clearfix">
-                <div class="pull-right">
-                  <p class="h6 text-white m-t-0">有评论标签的订单数</p>
-                  <p class="h3 text-white m-b-0">105840</p>
-                </div>
-                <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-account fa-1-5x"></i></span> </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-3">
-            <div class="card bg-success">
-              <div class="card-body clearfix">
-                <div class="pull-right">
-                  <p class="h6 text-white m-t-0">满意度</p>
-                  <p class="h3 text-white m-b-0">0.93122</p>
-                </div>
-                <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-arrow-down-bold fa-1-5x"></i></span> </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-3">
-            <div class="card bg-purple">
-              <div class="card-body clearfix">
-                <div class="pull-right">
-                  <p class="h6 text-white m-t-0">冒泡页预估距离</p>
-                  <p class="h3 text-white m-b-0">5352.73m</p>
-                </div>
-                <div class="pull-left"> <span class="img-avatar img-avatar-48 bg-translucent"><i class="mdi mdi-comment-outline fa-1-5x"></i></span> </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- 在这里填写内容 新加的图-->
-        <div class="row">
-
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header"><h4>距离-满意度</h4></div>
-              <div class="card-body" align="center">
-                <img id="chart-line-new-1" width="640" height="auto" src="../static/images/distance-satisfy.png"/>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header"><h4>距离-满意度-50km</h4></div>
-              <div class="card-body" align="center">
-                <img id="chart-line-new-2" width="640" height="auto" src="../static/images/distance-satisfy50.png"/>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-        <!-- progressBar-->
-        <div class="col-lg-5">
-          <div class="card">
-              <div class="card-header"><h4>满意订单中：</h4></div>
-            <div id="canvas">
-              <div class="flexContainer1">
-                <div class="circle" id="circles-1"></div>
-                <div><button id="add_button"><h4>距离近</h4></button></div>
-              </div>
-              <div class="flexContainer2">
-                <div class="circle" id="circles-2"></div>
-                <div><button id="substract_button"><h4>时间短</h4></button></div>
-              </div>
-              <div class="flexContainer3">
-                <div class="circle" id="circles-3"></div>
-                <div><button id="add_width_button"><h4>是常走路线</h4></button></div>
-              </div>
-              <div class="flexContainer4">
-                <div class="circle" id="circles-4"></div>
-                <div><button id="substract_width_button"><h4>路况好无拥堵</h4></button></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-7">
-          <div class="card">
-              <div class="card-header"><h4>不满意订单中：</h4></div>
-            <div id="canvas_">
-              <div class="flexContainer6">
-                <div class="circle" id="circles-6"></div>
-                <div><button id="add_button_"><h4>路线绕路</h4></button></div>
-              </div>
-              <div class="flexContainer6">
-                <div class="circle" id="circles-7"></div>
-                <div><button id="substract_button_"><h4>不是常走路线</h4></button></div>
-              </div>
-              <div class="flexContainer6">
-                <div class="circle" id="circles-8"></div>
-                <div><button id="add_width_button_"><h4>有封路不能走</h4></button></div>
-              </div>
-              <div class="flexContainer6">
-                <div class="circle" id="circles-9"></div>
-                <div><button id="substract_width_button_"><h4>路线经常变</h4></button></div>
-              </div>
-              <div class="flexContainer6">
-                <div class="circle" id="circles-10"></div>
-                <div><button id="colors_button_"><h4>有细窄小路</h4></button></div>
-              </div>
-              <div class="flexContainer6">
-                <div class="circle" id="circles-11"></div>
-                <div><button id="escape_congestion_button_"><h4>路线拥堵</h4></button></div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-
-<!--        &lt;!&ndash; top 30 city progressBar&ndash;&gt;-->
-<!--        <div class="col-lg-6">-->
-<!--	      <div class="container">-->
-<!--		    <div class="row">-->
-<!--			  <div class="col-md-offset-3 col-md-6">-->
-<!--                <h3 class="progress-title">HTML5</h3>-->
-<!--                <div class="progress">-->
-<!--                  <div class="progress-bar" style="width:70%; background:#97c513;">-->
-<!--                    <div class="progress-value">70%</div>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-
-
-
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="card">
-              <div class="card-header"><h4>top30城市的客户满意度(升序):</h4></div>
-              <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th><h4>城市</h4></th>
-                      <th><h4>订单量</h4></th>
-                      <th><h4>满意度</h4></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>康复的家庭</td>
-                      <td>大江健三郎</td>
-                      <td>散文随笔</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>名侦探的规条</td>
-                      <td>东野圭吾</td>
-                      <td>悬疑小说</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>天才相师</td>
-                      <td>打眼</td>
-                      <td>都市小说</td>
-                    </tr>
-                  </tbody>
-                </table>
-            </div>
-          </div>
-        </div>
-
-
-
-        <!-- 在这里填写内容 原来的两个图-->
         
       </div>
       
@@ -514,19 +352,7 @@
 <script type="text/javascript" src="../static/js/jquery.min.js"></script>
 <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../static/js/perfect-scrollbar.min.js"></script>
-<script type="text/javascript" src="../static/js/Chart.js"></script>
 <script type="text/javascript" src="../static/js/main.min.js"></script>
-<script type="text/javascript" src="../static/js/circles.min.js"></script>
-<script type="text/javascript" src="../static/js/progressBar.js"></script>
-<script type="text/javascript" src="../static/js/progressBar2.js"></script>
-<script type="text/javascript" src="../static/js/perfect-scrollbar.min.js"></script>
-<!--&lt;!&ndash;时间选择插件&ndash;&gt;-->
-<script src="../static/js/bootstrap-datetimepicker/moment.min.js"></script>
-<script src="../static/js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
-<script src="../static/js/bootstrap-datetimepicker/locale/zh-cn.js"></script>
-<!--日期选择插件-->
-<script src="../static/js/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-<script src="../static/js/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
-<!--<script type="text/javascript" src="../static/js/main.min.js"></script>-->
+
 </body>
 </html>

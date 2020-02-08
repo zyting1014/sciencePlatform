@@ -18,9 +18,8 @@ def mainModel(request):
 def mainModelResult(request):
     return render(request, 'mainModelResult.html')
 
-
-def empty(request):
-    return render(request, 'empty.html')
+def dropRoute(request):
+    return render(request, 'dropRoute.html')
 
 
 def ajaxGetModel(request):
@@ -67,3 +66,8 @@ def ajaxGetTrainTestAuc(request):
             'featureKey': featureKey, 'featureImportance': featureImportance}
 
     return HttpResponse(json.dumps(data, ensure_ascii=False), content_type='application/json')
+
+
+
+def empty(request):
+    return render(request, 'empty.html')

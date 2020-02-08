@@ -7,6 +7,7 @@ urlpatterns = [
     path('comment/', views.comment, name='comment'),  # 用户满意度数据
     path('mainModel/', views.mainModel, name='mainModel'),  # 主模型配置
     path('mainModelResult/', views.mainModelResult, name='mainModelResult'),  # 主模型配置
+    path('dropRoute/', views.dropRoute, name='dropRoute'),  # 路线去重结果
     path('empty/', views.empty, name='empty'),  # 空网页
 
     path('ajaxGetModel/', views.ajaxGetModel, name='ajaxGetModel'),  # ajax get方法 获取模型标题表格
