@@ -429,7 +429,7 @@
       dataType:'json',
       success:function(data){
         console.log('success')
-        // 需要给图传lables和两个data
+        // 需要给auc曲线图传lables和两个data
         var xlabels = [];
         const trainAuc = data.train_auc;
         const testAuc = data.test_auc;
@@ -439,6 +439,7 @@
         }
         console.log(xlabels)
 
+        // 训练集 测试集 auc曲线图
         new Chart($("#chart-line-4"), {
           type: 'line',
           data: {
@@ -446,8 +447,8 @@
               datasets: [{
                   label: "训练集",
                   fill: false,
-                  borderWidth: 3,
-                  pointRadius: 4,
+                  borderWidth: 4,
+                  pointRadius: 0,
                   borderColor: "#36a2eb",
                   backgroundColor: "#36a2eb",
                   pointBackgroundColor: "#36a2eb",
@@ -459,8 +460,8 @@
               {
                   label: "测试集",
                   fill: false,
-                  borderWidth: 3,
-                  pointRadius: 4,
+                  borderWidth: 4,
+                  pointRadius: 0,
                   borderColor: "#ff6384",
                   backgroundColor: "#ff6384",
                   pointBackgroundColor: "#ff6384",
@@ -472,6 +473,36 @@
           },
           options: {}
         });
+
+        const featureKeys = data.featureKey
+        const featureImportance = data.featureImportance
+
+        // 特征重要性图
+        new Chart($("#chart-hbar-1"), {
+          type: 'horizontalBar',
+          data: {
+              labels: featureKeys,
+              datasets: [{
+                  label: "特征重要性",
+                  backgroundColor: "rgba(51,202,185,0.5)",
+                  borderColor: "rgba(0,0,0,0)",
+                  hoverBackgroundColor: "rgba(51,202,185,0.7)",
+                  hoverBorderColor: "rgba(0,0,0,0)",
+                  data: featureImportance
+              }]
+          },
+          options: {
+              scales: {
+                  xAxes: [{
+                      ticks: {
+                          beginAtZero: true
+                      }
+                  }]
+              }
+          }
+      });
+
+
       }
     })
   })
@@ -685,29 +716,29 @@ new Chart($("#chart-vbar-2"), {
     }
 });
 
-new Chart($("#chart-hbar-1"), {
-    type: 'horizontalBar',
-    data: {
-        labels: ["一月", "二月", "三月", "四月", "五月", "六月", "七月"],
-        datasets: [{
-            label: "收入",
-            backgroundColor: "rgba(51,202,185,0.5)",
-            borderColor: "rgba(0,0,0,0)",
-            hoverBackgroundColor: "rgba(51,202,185,0.7)",
-            hoverBorderColor: "rgba(0,0,0,0)",
-            data: [10, 59, 80, 58, 20, 55, 40]
-        }]
-    },
-    options: {
-        scales: {
-            xAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
+// new Chart($("#chart-hbar-1"), {
+//     type: 'horizontalBar',
+//     data: {
+//         labels: ["一月", "二月", "三月", "四月", "五月", "六月", "七月"],
+//         datasets: [{
+//             label: "收入",
+//             backgroundColor: "rgba(51,202,185,0.5)",
+//             borderColor: "rgba(0,0,0,0)",
+//             hoverBackgroundColor: "rgba(51,202,185,0.7)",
+//             hoverBorderColor: "rgba(0,0,0,0)",
+//             data: [10, 59, 80, 58, 20, 55, 40]
+//         }]
+//     },
+//     options: {
+//         scales: {
+//             xAxes: [{
+//                 ticks: {
+//                     beginAtZero: true
+//                 }
+//             }]
+//         }
+//     }
+// });
 
 new Chart($("#chart-hbar-2"), {
     type: 'horizontalBar',
