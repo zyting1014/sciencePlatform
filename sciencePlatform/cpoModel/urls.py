@@ -12,3 +12,5 @@ urlpatterns = [
     path('ajaxGetModel/', views.ajaxGetModel, name='ajaxGetModel'),  # ajax get方法 获取模型标题表格
     path('ajaxGetTrainTestAuc/', views.ajaxGetTrainTestAuc, name='ajaxGetTrainTestAuc')  # ajax get方法 获取模型标题表格
  ]
+
+
