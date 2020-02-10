@@ -73,7 +73,6 @@
             <li class="nav-item nav-item-has-subnav">
               <a href="javascript:void(0)"><i class="mdi mdi-language-javascript"></i> 效果评估</a>
               <ul class="nav nav-subnav">
-                <li> <a href="{% url 'dValueEvaluation' %}">差值评估</a> </li>
                 <li> <a href="lyear_js_datepicker.html">日期选取器</a> </li>
                 <li> <a href="lyear_js_sliders.html">滑块</a> </li>
                 <li> <a href="lyear_js_colorpicker.html">选色器</a> </li>
@@ -283,8 +282,164 @@
     <main class="lyear-layout-content">
 
       <div class="container-fluid">
-        <!-- 在这里填写内容-->
+         <!-- 在这里填写内容 新加的图-->
 
+<div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <table class="table table-bordered">
+                  <tr>
+                    <th>图名</th>
+                    <th>含义</th>
+                    <th>单位</th>
+                  </tr>
+                  <tr>
+                    <td>diff_distance_bubble</td>
+                    <td>冒泡页新模型距离-冒泡页旧模型距离</td>
+                    <td>1km</td>
+                  </tr>
+                  <tr class="active">
+                    <td>diff_distance_bubble_mpe</td>
+                    <td>(冒泡页新模型距离-冒泡页旧模型距离)/冒泡页旧模型距离</td>
+                    <td>%</td>
+                  </tr>
+                  <tr>
+                    <td>diff_distance_trip</td>
+                    <td>行程段新模型距离-行程段旧模型距离</td>
+                    <td>1km</td>
+                  </tr>
+                  <tr class="success">
+                    <td>diff_distance_trip_mpe</td>
+                    <td>(行程段新模型距离-行程段旧模型距离)/行程段旧模型距离</td>
+                    <td>%</td>
+                  </tr>
+                  <tr>
+                    <td>diff_fee</td>
+                    <td>行程段新模型价格-行程段旧模型价格</td>
+                    <td>0.5元</td>
+                  </tr>
+                  <tr class="info">
+                    <td>diff_fee_mpe</td>
+                    <td>(行程段新模型价格-行程段旧模型价格)/行程段旧模型价格</td>
+                    <td>%</td>
+                  </tr>
+                  <tr>
+                    <td>diff_time_bubble</td>
+                    <td>冒泡页新模型时间-冒泡页旧模型时间</td>
+                    <td>120s</td>
+                  </tr>
+                  <tr class="warning">
+                    <td>diff_time_bubble_mpe</td>
+                    <td>(冒泡页新模型时间-冒泡页旧模型时间)/冒泡页旧模型时间</td>
+                    <td>%</td>
+                  </tr>
+                  <tr>
+                    <td>diff_time_trip</td>
+                    <td>行程段新模型时间-行程段旧模型时间</td>
+                    <td>120s</td>
+                  </tr>
+                  <tr class="danger">
+                    <td>diff_time_trip_mpe</td>
+                    <td>(行程段新模型时间-行程段旧模型时间)/行程段旧模型时间</td>
+                    <td>%</td>
+                  </tr>
+                </table>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header"><h4>距离-满意度</h4></div>
+              <div class="card-body" align="center">
+                <img id="chart-line-dValue-1" width="640" height="auto" src="../static/images/dValueEvaluation/diff_distance_bubble.png"/>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header"><h4>距离-满意度-50km</h4></div>
+              <div class="card-body" align="center">
+                <img id="chart-line-dValue-2" width="640" height="auto" src="../static/images/dValueEvaluation/diff_distance_bubble_mpe.png"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header"><h4>距离-满意度</h4></div>
+              <div class="card-body" align="center">
+                <img id="chart-line-dValue-3" width="640" height="auto" src="../static/images/dValueEvaluation/diff_distance_trip.png"/>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header"><h4>距离-满意度-50km</h4></div>
+              <div class="card-body" align="center">
+                <img id="chart-line-dValue-4" width="640" height="auto" src="../static/images/dValueEvaluation/diff_distance_trip_mpe.png"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header"><h4>距离-满意度</h4></div>
+              <div class="card-body" align="center">
+                <img id="chart-line-dValue-5" width="640" height="auto" src="../static/images/dValueEvaluation/diff_fee.png"/>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header"><h4>距离-满意度-50km</h4></div>
+              <div class="card-body" align="center">
+                <img id="chart-line-dValue-6" width="640" height="auto" src="../static/images/dValueEvaluation/diff_fee_mpe.png"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header"><h4>距离-满意度</h4></div>
+              <div class="card-body" align="center">
+                <img id="chart-line-dValue-7" width="640" height="auto" src="../static/images/dValueEvaluation/diff_time_bubble.png"/>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header"><h4>距离-满意度-50km</h4></div>
+              <div class="card-body" align="center">
+                <img id="chart-line-dValue-8" width="640" height="auto" src="../static/images/dValueEvaluation/diff_time_bubble_mpe.png"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header"><h4>距离-满意度</h4></div>
+              <div class="card-body" align="center">
+                <img id="chart-line-dValue-9" width="640" height="auto" src="../static/images/dValueEvaluation/diff_time_trip.png"/>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header"><h4>距离-满意度-50km</h4></div>
+              <div class="card-body" align="center">
+                <img id="chart-line-dValue-10" width="640" height="auto" src="../static/images/dValueEvaluation/diff_time_trip_mpe.png"/>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </main>
