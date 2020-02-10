@@ -10,6 +10,8 @@ def index(request):
 def comment(request):
     return render(request, 'comment.html')
 
+def dropRoute(request):
+    return render(request, 'dropRoute.html')
 
 def mainModel(request):
     return render(request, 'mainModel.html')
@@ -18,8 +20,8 @@ def mainModel(request):
 def mainModelResult(request):
     return render(request, 'mainModelResult.html')
 
-def dropRoute(request):
-    return render(request, 'dropRoute.html')
+def dValueEvaluation(request):
+    return render(request, 'dValueEvaluation.html')
 
 
 def ajaxGetModel(request):
