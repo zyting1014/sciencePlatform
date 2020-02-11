@@ -13,6 +13,9 @@
 <link href="../static/css/materialdesignicons.min.css" rel="stylesheet">
 <link href="../static/css/style.min.css" rel="stylesheet">
 <link href="../static/css/table/table.css" rel="stylesheet">
+<link rel="stylesheet" href="../static/css/feature/public.css" />
+<link rel="stylesheet" type="text/css" href="../static/css/feature/style.css" />
+<script type="text/javascript" src="../static/js/zturn.js"></script>
 </head>
 
 <body>
@@ -290,49 +293,76 @@
         <!-- 模型参数-->
 
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-4">
             <div class="card">
               <table class="table table-striped" style="height: 770px;" id="modelSampleInfo">
                   <tr>
                     <th>参数</th>
                     <th>值</th>
                   </tr>
-<!--                  <tr>-->
-<!--                    <td class="td-p">训练集总样本数</td>-->
-<!--                    <td class="td-v">1</td>-->
-<!--                  </tr>-->
-<!--                  <tr>-->
-<!--                    <td class="td-p">训练集正样本数</td>-->
-<!--                    <td>1</td>-->
-<!--                  </tr>-->
-<!--                  <tr>-->
-<!--                    <td class="td-p">训练集负样本数</td>-->
-<!--                    <td>1</td>-->
-<!--                  </tr>-->
-<!--                  <tr>-->
-<!--                    <td class="td-p">测试集总样本数</td>-->
-<!--                    <td>1</td>-->
-<!--                  </tr>-->
-<!--                  <tr>-->
-<!--                    <td class="td-p">测试集正样本数</td>-->
-<!--                    <td>1</td>-->
-<!--                  </tr>-->
-<!--                  <tr>-->
-<!--                    <td class="td-p">测试集负样本数</td>-->
-<!--                    <td>1</td>-->
-<!--                  </tr>-->
-<!--                  <tr>-->
-<!--                    <td class="td-p">模型文件位置</td>-->
-<!--                    <td>1</td>-->
-<!--                  </tr>-->
-<!--                  <tr>-->
-<!--                    <td class="td-p">模型配置</td>-->
-<!--                    <td>1</td>-->
-<!--                  </tr>-->
+                  <!-- ajax content -->
 
                 </table>
             </div>
           </div>
+          <div class="col-lg-8">
+
+
+
+
+            <!--轮播-->
+		    <div class="lb_gl" style="height: 770px;">
+			<div class="container">
+				<h1 class="turn_3d">听听这些老前辈的分享，你会获得信心</h1>
+				<div class="pictureSlider poster-main">
+					<div class="poster-btn poster-prev-btn"></div>
+					<ul id="zturn" class="poster-list">
+						<li class="poster-item  zturn-item" >
+							<p class="xxgy">f1</p>
+							<div class="students_star">
+								<p class="cell_list"><span class="lf">姓名：<span class="darks">小明</span></span> <span class="rt">薪资 ：<span class="darks">15k</span></span>
+								<div class="zwjs">
+									自我介绍是向别人展示你自我介绍好不好,甚至直接关系到你给别人的第一印象
+								</div>
+							</div>
+						</li>
+
+						<li class="poster-item  zturn-item" >
+							<p class="xxgy">f2</p>
+							<div class="students_star">
+								<p class="cell_list"><span class="lf">姓名：<span class="darks">小明</span></span> <span class="rt">薪资 ：<span class="darks">15k</span></span>
+								<div class="zwjs">
+									自我介绍是向别人展示你自我介绍好不好,甚至直接关系到你给别人的第一印象
+								</div>
+							</div>
+						</li>
+
+                        <li class="poster-item  zturn-item" >
+							<p class="xxgy">f1</p>
+							<div class="students_star">
+								<p class="cell_list"><span class="lf">姓名：<span class="darks">小明</span></span> <span class="rt">薪资 ：<span class="darks">15k</span></span>
+								<div class="zwjs">
+									自我介绍是向别人展示你自我介绍好不好,甚至直接关系到你给别人的第一印象
+								</div>
+							</div>
+						</li>
+
+					</ul>
+
+				</div>
+		</div>
+
+		</div>
+		    <!--轮播-->
+
+
+
+          </div>
+        </div>
+
+        
+        <div class="row">
+
           <div class="col-lg-6">
             <div class="card">
               <div class="card-header"><h4>auc值 </h4></div>
@@ -341,9 +371,7 @@
               </div>
             </div>
           </div>
-        </div>
-        
-        <div class="row">
+
 
           <div class="col-lg-6">
             <div class="card">
@@ -469,6 +497,22 @@
       }
     })
   })
+</script>
+<script type="text/javascript">
+						var aa=new zturn({
+							id:"zturn",
+							opacity:0.9,
+							width:382,
+							Awidth:1024,
+							scale:0.9
+						})
+						var ab=new zturn({
+							id:"zturn2",
+							opacity:0.8,
+							width:382,
+							Awidth:1024,
+							scale:0.6
+						})
 </script>
 </body>
 </html>
