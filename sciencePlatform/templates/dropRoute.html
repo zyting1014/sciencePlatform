@@ -286,24 +286,44 @@
     <main class="lyear-layout-content">
       
       <div class="container-fluid">
-
         
         <div class="row">
-          <div class="col-md-6">
-            <div class="card" id="leftInfo">
-              <div class="card-header"><h4>控制台输出</h4></div>
-              <h3><br/>
-                &emsp;&emsp;选用的数据为2019-12-16 08:00<br/>
-                &emsp;&emsp;城市为3_guangzhou数据<br/>
-                &emsp;&emsp;路线条数过滤阈值为80，相似度去重阈值为5<br/>
-                &emsp;&emsp;originRdd_first cnt : 18263465<br/>
-                &emsp;&emsp;分组后的订单有 : 631773<br/><br/><br/><br/>
-              </h3>
+          <div class="col-lg-4" style="margin-left: 2%;margin-right: 2%;" id="modelDropInfo">
+            <div class="card">
+              <div class="card-header bg-primary">
+                <h4>控制台输出</h4>
+                <ul class="card-actions">
+                  <li>
+                    <button type="button"><i class="mdi mdi-more"></i></button>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <h4><br/>
+                  &emsp;选用的数据为2019-12-16 08:00<br/>
+                  &emsp;城市为3_guangzhou数据<br/>
+                  &emsp;路线条数过滤阈值为80，相似度去重阈值为5<br/>
+                  &emsp;originRdd_first cnt : 18263465<br/>
+                  &emsp;分组后的订单有 : 631773<br/><br/><br/><br/>
+              </h4>
+              </div>
             </div>
           </div>
-          <div class="col-md-6">
+<!--          <div class="col-md-6">-->
+<!--            <div class="card" id="leftInfo">-->
+<!--              <div class="card-header"><h4>控制台输出</h4></div>-->
+<!--              <h3><br/>-->
+<!--                &emsp;&emsp;选用的数据为2019-12-16 08:00<br/>-->
+<!--                &emsp;&emsp;城市为3_guangzhou数据<br/>-->
+<!--                &emsp;&emsp;路线条数过滤阈值为80，相似度去重阈值为5<br/>-->
+<!--                &emsp;&emsp;originRdd_first cnt : 18263465<br/>-->
+<!--                &emsp;&emsp;分组后的订单有 : 631773<br/><br/><br/><br/>-->
+<!--              </h3>-->
+<!--            </div>-->
+<!--          </div>-->
+          <div class="col-md-7" id="dropResult">
             <div class="card">
-              <div class="card-header"><h4>去重结果</h4></div>
+              <div class="card-header"><h3>去重结果</h3></div>
               <div class="card-body">
  
                 <ul id="myTabs" class="nav nav-tabs" role="tablist">
@@ -313,14 +333,14 @@
                 </ul>
                 <div id="myTabContent" class="tab-content">
                   <div class="tab-pane fade active in" id="method1">
-                    <p>
+                    <h3>
                       替换前topN路线的sim值为:0.979223158666178<br/>
                       替换后topN路线的sim值为:0.9785513619152315<br/>
                       替换前订单平均路线数为:129.8018443874435,替换后订单平均路线数为:128.82674972517407<br/>
                       时间最短路保留比例为:0.993587394650055<br/>
                       过滤前含有避堵准出订单的总订单数为 : 2337<br/>
                       替换前多路线的总命中条数为 : 141762.0，替换后多路线的总命中条数为 : 141086.0，保留比例为0.995231444251633<br/>
-                    </p>
+                    </h3>
                   </div>
                   <div class="tab-pane fade" id="method2">
                     <p>
@@ -354,6 +374,13 @@
 <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../static/js/perfect-scrollbar.min.js"></script>
 <script type="text/javascript" src="../static/js/main.min.js"></script>
+<script>
+  $(function () {
+    alert("hi")
+          // document.getElementById("modelDropInfo").style.height= document.getElementById("dropResult").clientHeight;
+      // document.getElementById("modelDropInfo").style.height= document.getElementById("dropResult").clientHeight;
+  })
+</script>
 
 </body>
 </html>

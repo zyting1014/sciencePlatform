@@ -10,8 +10,10 @@ def index(request):
 def comment(request):
     return render(request, 'comment.html')
 
+
 def dropRoute(request):
     return render(request, 'dropRoute.html')
+
 
 def mainModel(request):
     return render(request, 'mainModel.html')
@@ -19,6 +21,7 @@ def mainModel(request):
 
 def mainModelResult(request):
     return render(request, 'mainModelResult.html')
+
 
 def dValueEvaluation(request):
     return render(request, 'dValueEvaluation.html')
@@ -44,6 +47,9 @@ def ajaxGetTrainTestAuc(request):
     FILE_NAME = '17维原始特征20190701_20190707-20190710_cpo.txt'
     filePath = os.path.join(BASE_DIR, FILE_NAME)
     f = open(filePath)
+    trainTag = True
+    allSampleTrain = 0;posSampleTrain = 0;negSampleTrain = 0
+    allSampleTest = 0;posSampleTest = 0;negSampleTest = 0
     train_auc = []
     test_auc = []
     featureKey = []
@@ -63,11 +69,41 @@ def ajaxGetTrainTestAuc(request):
             kValue = int(line[line.find('val') + 4:].strip())
             featureKey.append(kName)
             featureImportance.append(kValue)
+        elif line.find('all') != -1:
+            allPoint = line.find('all')
+            posPoint = line.find('pos')
+            negPoint = line.find('neg')
+            allSample = int(line[allPoint + 5:line.find(',')].strip())
+            posSample = int(line[posPoint + 5:line.rfind(',')].strip())
+            negSample = int(line[negPoint + 5:].strip())
+
+            if trainTag:
+                allSampleTrain = allSample
+                posSampleTrain = posSample
+                negSampleTrain = negSample
+                trainTag = False
+            else:
+                allSampleTest = allSample
+                posSampleTest = posSample
+                negSampleTest = negSample
 
     data = {'train_auc': train_auc, 'test_auc': test_auc,
-            'featureKey': featureKey, 'featureImportance': featureImportance}
+            'featureKey': featureKey, 'featureImportance': featureImportance,
+            'allSampleTrain': allSampleTrain, 'posSampleTrain': posSampleTrain, 'negSampleTrain': negSampleTrain,
+            'allSampleTest': allSampleTest, 'posSampleTest': posSampleTest, 'negSampleTest': negSampleTest}
 
     return HttpResponse(json.dumps(data, ensure_ascii=False), content_type='application/json')
+
+
+def ajaxGetFeatureName(request):
+    BASE_DIR = '/home/tina/zhuyuting/毕设_20200108备份/毕设/实验数据'
+    fileName = '17维原始特征20190701_20190707-20190710_cpo.txt'
+    if fileName.find("维") != -1:
+        featureNum = int(fileName[0:fileName.find("维")])
+        if featureNum == 17:
+            print('hi')
+    return render(request, 'empty.html')
+
 
 
 

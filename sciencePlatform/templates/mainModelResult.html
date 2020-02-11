@@ -292,43 +292,43 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="card">
-              <table class="table table-bordered" class="table table-striped" style="height: 770px;">
+              <table class="table table-striped" style="height: 770px;" id="modelSampleInfo">
                   <tr>
                     <th>参数</th>
                     <th>值</th>
                   </tr>
-                  <tr>
-                    <td class="td-p">训练集总样本数</td>
-                    <td class="td-v">1</td>
-                  </tr>
-                  <tr>
-                    <td class="td-p">训练集正样本数</td>
-                    <td>1</td>
-                  </tr>
-                  <tr>
-                    <td class="td-p">训练集负样本数</td>
-                    <td>1</td>
-                  </tr>
-                  <tr>
-                    <td class="td-p">测试集总样本数</td>
-                    <td>1</td>
-                  </tr>
-                  <tr>
-                    <td class="td-p">测试集正样本数</td>
-                    <td>1</td>
-                  </tr>
-                  <tr>
-                    <td class="td-p">测试集负样本数</td>
-                    <td>1</td>
-                  </tr>
-                  <tr>
-                    <td class="td-p">模型文件位置</td>
-                    <td>1</td>
-                  </tr>
-                  <tr>
-                    <td class="td-p">模型配置</td>
-                    <td>1</td>
-                  </tr>
+<!--                  <tr>-->
+<!--                    <td class="td-p">训练集总样本数</td>-->
+<!--                    <td class="td-v">1</td>-->
+<!--                  </tr>-->
+<!--                  <tr>-->
+<!--                    <td class="td-p">训练集正样本数</td>-->
+<!--                    <td>1</td>-->
+<!--                  </tr>-->
+<!--                  <tr>-->
+<!--                    <td class="td-p">训练集负样本数</td>-->
+<!--                    <td>1</td>-->
+<!--                  </tr>-->
+<!--                  <tr>-->
+<!--                    <td class="td-p">测试集总样本数</td>-->
+<!--                    <td>1</td>-->
+<!--                  </tr>-->
+<!--                  <tr>-->
+<!--                    <td class="td-p">测试集正样本数</td>-->
+<!--                    <td>1</td>-->
+<!--                  </tr>-->
+<!--                  <tr>-->
+<!--                    <td class="td-p">测试集负样本数</td>-->
+<!--                    <td>1</td>-->
+<!--                  </tr>-->
+<!--                  <tr>-->
+<!--                    <td class="td-p">模型文件位置</td>-->
+<!--                    <td>1</td>-->
+<!--                  </tr>-->
+<!--                  <tr>-->
+<!--                    <td class="td-p">模型配置</td>-->
+<!--                    <td>1</td>-->
+<!--                  </tr>-->
 
                 </table>
             </div>
@@ -449,6 +449,22 @@
           }
       });
 
+
+        // update table
+        var tr;
+
+        tr = '<tr>' + '<td class="td-p">训练集总样本数</td>' + '<td class="td-v">' + data.allSampleTrain + '</td>' + '</tr>' +
+                '<tr>' + '<td class="td-p">训练集正样本数</td>' + '<td class="td-v">' + data.posSampleTrain + '</td>' + '</tr>' +
+                '<tr>' + '<td class="td-p">训练集负样本数</td>' + '<td class="td-v">' + data.negSampleTrain + '</td>' + '</tr>' +
+                '<tr>' + '<td class="td-p">测试集总样本数</td>' + '<td class="td-v">' + data.allSampleTest + '</td>' + '</tr>' +
+                '<tr>' + '<td class="td-p">测试集正样本数</td>' + '<td class="td-v">' + data.posSampleTest + '</td>' + '</tr>' +
+                '<tr>' + '<td class="td-p">测试集负样本数</td>' + '<td class="td-v">' + data.allSampleTest + '</td>' + '</tr>' +
+                '<tr>' + '<td class="td-p">模型文件位置</td>' + '<td class="td-v">' + 1 + '</td>' + '</tr>' +
+                '<tr>' + '<td class="td-p">模型配置</td>' + '<td class="td-v">' + 1+ '</td>' + '</tr>'
+
+        console.log(tr)
+
+        $("#modelSampleInfo").append(tr)
 
       }
     })
