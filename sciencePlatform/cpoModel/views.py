@@ -108,4 +108,4 @@ def ajaxGetFeatureName(request):
 
 
 def empty(request):
-    return render(request, 'empty.html')
+    return render(request, 'featureTest.html')
