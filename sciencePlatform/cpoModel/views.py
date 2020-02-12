@@ -96,13 +96,37 @@ def ajaxGetTrainTestAuc(request):
 
 
 def ajaxGetFeatureName(request):
+    import os
+    data = {}
     BASE_DIR = '/home/tina/zhuyuting/毕设_20200108备份/毕设/实验数据'
-    fileName = '17维原始特征20190701_20190707-20190710_cpo.txt'
+    fileName = '17维原始特征20190701_20190707-20190710_cpo.txt'  # 这行传入实际的特征文件名
+
+    BASE_DIR1 = '/home/tina/zhuyuting/bishe/jupyterProject/'
+
     if fileName.find("维") != -1:
         featureNum = int(fileName[0:fileName.find("维")])
+        filePath = ''
         if featureNum == 17:
-            print('hi')
-    return render(request, 'empty.html')
+            if fileName.find('cpo') != -1:
+                filePath = os.path.join(BASE_DIR1,'17_cpo.txt')
+            else:
+                filePath = os.path.join(BASE_DIR1, '17_comment.txt')
+        else:# 34
+            filePath = os.path.join(BASE_DIR1, '34_comment.txt')
+
+        f = open(filePath)
+        for line in f:
+            feature = line[0:line.find(':')].strip()
+            meaning = line[line.find(':') + 1:].strip()
+            data[feature] = meaning
+        for key in data:
+            print(key)
+        return HttpResponse(json.dumps(data, ensure_ascii=False), content_type='application/json')
+
+    else:  # 以不满意单个指标为标签的模型 现在未开发
+        print('未找到文件！')
+        return render(request, 'empty.html')
+
 
 
 
