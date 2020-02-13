@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="zh" xmlns="http://www.w3.org/1999/html">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--{% load static %}-->
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 <title>首页 - 路线投诉模型(cpo)科研实验平台</title>
 <link rel="icon" href="../static/images/favicon.ico" type="image/ico">
@@ -12,16 +12,15 @@
 <link href="../static/css/bootstrap.min.css" rel="stylesheet">
 <link href="../static/css/materialdesignicons.min.css" rel="stylesheet">
 <link href="../static/css/style.min.css" rel="stylesheet">
+<!--<link href="../static/css/pictureBigger/bootstrap.css" rel="stylesheet" />-->
+<link href="../static/css/pictureBigger/bootstrap-responsive.css" rel="stylesheet" />
+<link href="../static/css/pictureBigger/fsgallery.css" rel="stylesheet" />
 <link rel="stylesheet" href="../static/css/feature/public.css" />
 <link rel="stylesheet" type="text/css" href="../static/css/feature/style.css" />
-<!--<link href="css/bootstrap.css" rel="stylesheet" />-->
-<!--<link href="css/bootstrap-responsive.css" rel="stylesheet" />-->
-<!--<link href="css/fsgallery.css" rel="stylesheet" />-->
 
-<!--<script src="js/jquery-1.9.1.js"></script>-->
-<!--<script src="js/fs_forse.js"></script>-->
-<script type="text/javascript" src="../static/js/jquery.min.js"></script>
 <script type="text/javascript" src="../static/js/zturn.js"></script>
+<script type="text/javascript" src="../static/js/jquery.min.js"></script>
+<script src="../static/js/fs_forse.js"></script>
 </head>
 
 <body>
@@ -291,12 +290,13 @@
     </header>
     <!--End 头部信息-->
 
-    
+
+
     <!--页面主要内容-->
     <main class="lyear-layout-content">
-      
+
       <div class="container-fluid">
-        
+
         <div class="row">
 
           <div class="col-lg-4" style="margin-left: 2%;margin-right: 2%;" id="modelDropInfo">
@@ -309,7 +309,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="card-body" style="border: #33cabb;border-style: solid;border-width:4px;height:85%;margin-right: 1px;">
+              <div id = "ttt" class="card-body" style="border: #33cabb;border-style: solid;border-width:4px;height:85%;margin-right: 1px;">
                 <h3><br/>
                   &emsp;选用的数据为2019-12-16 08:00<br/>
                   &emsp;城市为3_guangzhou数据<br/>
@@ -324,7 +324,7 @@
             <div class="card" style="height: 450px;">
               <div class="card-header"><h3>去重结果</h3></div>
               <div class="card-body">
- 
+
                 <ul id="myTabs" class="nav nav-tabs" role="tablist">
                   <li class="active"><a href="#method1" id="similarity-tab" role="tab" data-toggle="tab">相似度去重</a></li>
                   <li><a href="#method2" role="tab" id="percent-tab" data-toggle="tab">分位数去重</a></li>
@@ -355,11 +355,11 @@
                     <p>原名陈文统，中国著名武侠小说家，与金庸、古龙并称为中国武侠小说三大宗师，被誉为新派武侠小说的开山祖师。代表作品有《白发魔女传》、《七剑下天山》、《萍踪侠影录》、《云海玉弓缘》等。在评价自己的武侠创作地位时，梁羽生曾说：“开风气也，梁羽生；发扬光大者，金庸。”另有笔名陈鲁、冯瑜宁、梁慧如、李夫人、冯显华、幻萍、佟硕之、凤雏生。</p>
                   </div>
                 </div>
-                
+
               </div>
             </div>
           </div>
-          
+
         </div>
 
         <div class="row">
@@ -375,7 +375,16 @@
                           <p class="say">明月几时有</p>
                           <div class="for_btn">
 
-                            <img src="../static/images/feature/img/xueyuan.png" width="100%">
+                            <!-- gallery-->
+                            <ul class="thumbnails" id="gallery">
+                              <li class="span3">
+                                <a href="../static/images/testimg/1.jpg">
+                                  <img src="../static/images/testimg/1_mini.jpg" alt="" />
+                                </a>
+                              </li>
+                            </ul>
+                            <!--end gallery-->
+
                             <a href="#" class="in_page"><img src="../static/images/feature/images/iconin.png" /></a>
                           </div>
                           <div class="students_star">
@@ -420,15 +429,15 @@
             </div>
           </div>
         </div>
-        
+
       </div>
-      
+
     </main>
     <!--End 页面主要内容-->
   </div>
 </div>
 
-<script type="text/javascript" src="../static/js/jquery.min.js"></script>
+
 <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../static/js/perfect-scrollbar.min.js"></script>
 <script type="text/javascript" src="../static/js/main.min.js"></script>
