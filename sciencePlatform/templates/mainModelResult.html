@@ -293,7 +293,7 @@
         <!-- 模型参数-->
 
         <div class="row">
-          <div class="col-lg-4">
+          <div class="col-lg-3">
             <div class="card">
               <table class="table table-striped" style="height: 770px;" id="modelSampleInfo">
                   <tr>
@@ -305,7 +305,7 @@
                 </table>
             </div>
           </div>
-          <div class="col-lg-8">
+          <div class="col-lg-9">
 
 
 
@@ -317,35 +317,8 @@
 				<div class="pictureSlider poster-main">
 					<div class="poster-btn poster-prev-btn"></div>
 					<ul id="zturn" class="poster-list">
-<!--						<li class="poster-item  zturn-item" >-->
-<!--							<p class="xxgy">f1</p>-->
-<!--							<div class="students_star">-->
-<!--								<p class="cell_list"><span class="lf">姓名：<span class="darks">小明</span></span> <span class="rt">薪资 ：<span class="darks">15k</span></span>-->
-<!--								<div class="zwjs">-->
-<!--									自我介绍是向别人展示你自我介绍好不好,甚至直接关系到你给别人的第一印象-->
-<!--								</div>-->
-<!--							</div>-->
-<!--						</li>-->
 
-<!--						<li class="poster-item  zturn-item" >-->
-<!--							<p class="xxgy">f2</p>-->
-<!--							<div class="students_star">-->
-<!--								<p class="cell_list"><span class="lf">姓名：<span class="darks">小明</span></span> <span class="rt">薪资 ：<span class="darks">15k</span></span>-->
-<!--								<div class="zwjs">-->
-<!--									自我介绍是向别人展示你自我介绍好不好,甚至直接关系到你给别人的第一印象-->
-<!--								</div>-->
-<!--							</div>-->
-<!--						</li>-->
-
-<!--                        <li class="poster-item  zturn-item" >-->
-<!--							<p class="xxgy">f1</p>-->
-<!--							<div class="students_star">-->
-<!--								<p class="cell_list"><span class="lf">姓名：<span class="darks">小明</span></span> <span class="rt">薪资 ：<span class="darks">15k</span></span>-->
-<!--								<div class="zwjs">-->
-<!--									自我介绍是向别人展示你自我介绍好不好,甚至直接关系到你给别人的第一印象-->
-<!--								</div>-->
-<!--							</div>-->
-<!--						</li>-->
+                      <!-- 在这里填入内容-->
 
 					</ul>
 
@@ -499,6 +472,50 @@
   })
 </script>
 <script type="text/javascript">
+		$(function () {
+          $.ajax({
+            url:"{% url 'ajaxGetFeatureName' %}",
+            type:'GET',
+            dataType: 'json',
+            success:function (data) {
+
+              $.each(data,function(key,value){ // 遍历字典
+
+                tr = '<li class="poster-item  zturn-item" >' +
+                        '<p class="xxgy">' + key + '</p>' +
+                        '<div class="students_star">' +
+                        '<p class="cell_list"><span class="lf">姓名：<span class="darks">小明</span></span> <span class="rt">薪资 ：<span class="darks">15k</span></span>' +
+                        '<div class="zwjs">' + value + '</div>' +
+                        '</div>' + '</li>'
+
+                // alert(tr)
+                $("#zturn").append(tr)
+              })
+
+
+              var aa=new zturn({
+							id:"zturn",
+							opacity:0.9,
+							width:382,
+							Awidth:1024,
+							scale:0.9
+						})
+						var ab=new zturn({
+							id:"zturn2",
+							opacity:0.8,
+							width:382,
+							Awidth:1024,
+							scale:0.6
+						})
+
+              console.log($("#zturn").html())
+
+
+            }
+          })
+		})
+	</script>
+<script type="text/javascript">
 						var aa=new zturn({
 							id:"zturn",
 							opacity:0.9,
@@ -514,30 +531,5 @@
 							scale:0.6
 						})
 </script>
-<script type="text/javascript">
-		$(function () {
-          $.ajax({
-            url:"{% url 'ajaxGetFeatureName' %}",
-            type:'GET',
-            dataType: 'json',
-            success:function (data) {
-              $.each(data,function(key,value){ // 遍历字典
-
-                tr = '<li class="poster-item  zturn-item" >' +
-                        '<p class="xxgy">' + key + '</p>' +
-                        '<div class="students_star">' +
-                        '<p class="cell_list"><span class="lf">姓名：<span class="darks">小明</span></span> <span class="rt">薪资 ：<span class="darks">15k</span></span>' +
-                        '<div class="zwjs">' + value + '</div>' +
-                        '</div>' + '</li>'
-
-                $("#zturn").append(tr)
-              })
-
-
-
-            }
-          })
-		})
-	</script>
 </body>
 </html>
