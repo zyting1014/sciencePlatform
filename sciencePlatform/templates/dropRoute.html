@@ -101,26 +101,26 @@
                 <li> <a href="lyear_js_notify.html">通知消息</a> </li>
               </ul>
             </li>
-            <li class="nav-item nav-item-has-subnav">
-              <a href="javascript:void(0)"><i class="mdi mdi-menu"></i> 多级菜单</a>
-              <ul class="nav nav-subnav">
-                <li> <a href="#!">一级菜单</a> </li>
-                <li class="nav-item nav-item-has-subnav">
-                  <a href="#!">一级菜单</a>
-                  <ul class="nav nav-subnav">
-                    <li> <a href="#!">二级菜单</a> </li>
-                    <li class="nav-item nav-item-has-subnav">
-                      <a href="#!">二级菜单</a>
-                      <ul class="nav nav-subnav">
-                        <li> <a href="#!">三级菜单</a> </li>
-                        <li> <a href="#!">三级菜单</a> </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li> <a href="#!">一级菜单</a> </li>
-              </ul>
-            </li>
+<!--            <li class="nav-item nav-item-has-subnav">-->
+<!--              <a href="javascript:void(0)"><i class="mdi mdi-menu"></i> 多级菜单</a>-->
+<!--              <ul class="nav nav-subnav">-->
+<!--                <li> <a href="#!">一级菜单</a> </li>-->
+<!--                <li class="nav-item nav-item-has-subnav">-->
+<!--                  <a href="#!">一级菜单</a>-->
+<!--                  <ul class="nav nav-subnav">-->
+<!--                    <li> <a href="#!">二级菜单</a> </li>-->
+<!--                    <li class="nav-item nav-item-has-subnav">-->
+<!--                      <a href="#!">二级菜单</a>-->
+<!--                      <ul class="nav nav-subnav">-->
+<!--                        <li> <a href="#!">三级菜单</a> </li>-->
+<!--                        <li> <a href="#!">三级菜单</a> </li>-->
+<!--                      </ul>-->
+<!--                    </li>-->
+<!--                  </ul>-->
+<!--                </li>-->
+<!--                <li> <a href="#!">一级菜单</a> </li>-->
+<!--              </ul>-->
+<!--            </li>-->
           </ul>
         </nav>
 
@@ -316,19 +316,19 @@
                 </ul>
               </div>
               <div id = "ttt" class="card-body" style="border: #33cabb;border-style: solid;border-width:4px;height:85%;margin-right: 1px;">
-                <h5><br/>
+                <h4><br/>
                   &emsp;选用的数据为2019-12-16 08:00<br/>
                   &emsp;城市为3_guangzhou数据<br/>
                   &emsp;路线条数过滤阈值为80，相似度去重阈值为5<br/>
                   &emsp;originRdd_first cnt : 18263465<br/>
                   &emsp;分组后的订单有 : 631773<br/><br/><br/><br/>
-              </h5>
+              </h4>
               </div>
             </div>
           </div>
           <div class="col-md-7">
             <div class="card" style="height: 450px;">
-              <div class="card-header"><h3>去重结果</h3></div>
+              <div class="card-header"><h4>去重结果</h4></div>
               <div class="card-body">
 
                 <ul id="myTabs" class="nav nav-tabs" role="tablist">
@@ -420,9 +420,10 @@
                           </div>
                           <div class="students_star">
                             <div class="zwjs">
-                              1.为每条候选路线初始化布尔值，记录是否为top1路线。将候选路线按精排打分排序，第一条路线的设为True，其余为False.
-                              2.对每条候选路线初始化布尔值，记录是否被删除。所有路线均为False.
-                              3.双重循环遍历路线数组，若两条路线的关键途径点相同，且距离差在2km以内，且均未被删除，则进行如下判断：两条路线的并集-交集是否小于阈值？若小于，若两条路线中有top1路线，则将非top1路线删除标记设为True，否则，将距离长的路线删除标记设为True.
+                              1.设初始去重阈值为K。
+                              2.取得候选路线按时间、距离、绕路比三个特征升序排序的K分位数路线，取三个集合的并集作为新一轮去重结果。
+                              3.若新路线条数小于80条，结束去重。
+                              4.K -= 0.05，返回第二步。
                             </div>
                           </div>
 						</li>
@@ -435,8 +436,8 @@
                             <!-- gallery-->
                             <ul class="thumbnails" id="gallery3">
                               <li class="span3">
-                                <a href="../static/images/dropRoute/dropMethod1.png">
-                                  <img src="../static/images/dropRoute/dropMethod1.png" alt=""/>
+                                <a href="../static/images/dropRoute/dropMethod3.png">
+                                  <img src="../static/images/dropRoute/dropMethod3.png" alt=""/>
                                 </a>
                               </li>
                             </ul>
@@ -445,9 +446,9 @@
                           </div>
                           <div class="students_star">
                             <div class="zwjs">
-                              1.为每条候选路线初始化布尔值，记录是否为top1路线。将候选路线按精排打分排序，第一条路线的设为True，其余为False.
-                              2.对每条候选路线初始化布尔值，记录是否被删除。所有路线均为False.
-                              3.双重循环遍历路线数组，若两条路线的关键途径点相同，且距离差在2km以内，且均未被删除，则进行如下判断：两条路线的并集-交集是否小于阈值？若小于，若两条路线中有top1路线，则将非top1路线删除标记设为True，否则，将距离长的路线删除标记设为True.
+                              混合去重是在相似度去重基础上进行动态分位数去重。将混合去重算法列为候选去重方案的原因是前两种去重方
+                              案从不同方面去重路线，相似度去重去掉相似的路线，动态分位数去重去掉明显质量差的路线，两种去重方案侧
+                              重不同。
                             </div>
                           </div>
 						</li>

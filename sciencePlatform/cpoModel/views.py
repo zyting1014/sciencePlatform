@@ -29,14 +29,29 @@ def dValueEvaluation(request):
 
 def ajaxGetModel(request):
     # return 训练集日期 训练集城市 测试集日期 测试集城市 模型名称 特征数量 正负样本比例 上传时间
-    item1 = {'trainDate': '20191001-20191007', 'trainCity': 'Beijing', 'testDate': '20191110-20191110',
-             'testCity': 'Beijing',
-             'modelName': 'LR', 'featureNums': '17', 'posWeight': '15', 'createTime': '20200101'}
-    item2 = {'trainDate': '20191001-20191007', 'trainCity': 'Beijing', 'testDate': '20191110-20191110',
-             'testCity': 'Beijing',
-             'modelName': 'LR', 'featureNums': '17', 'posWeight': '15', 'createTime': '20200101'}
+    # item1 = {'trainDate': '20191001-20191007', 'trainCity': 'Beijing', 'testDate': '20191110-20191110',
+    #          'testCity': 'Beijing',
+    #          'modelName': 'LR', 'featureNums': '17', 'posWeight': '15', 'createTime': '20200101'}
+    # item2 = {'trainDate': '20191001-20191007', 'trainCity': 'Beijing', 'testDate': '20191110-20191110',
+    #          'testCity': 'Beijing',
+    #          'modelName': 'LR', 'featureNums': '17', 'posWeight': '15', 'createTime': '20200101'}
+    #
+    # data = {'data': [item1, item2]}
 
-    data = {'data': [item1, item2]}
+    import os
+    res = []
+    fileDir = 'D:\\zhuyuting\\bishe\\jupyterProject'
+    filePath = os.path.join(fileDir, '模型配置名称.txt')
+    f = open(filePath, 'r', encoding='utf-8')
+    for line in f:
+        if len(line) > 5:
+            line = line.split('	')
+            item = {'trainDate': line[0], 'trainCity': line[1], 'testDate': line[2],
+                    'testCity': line[3], 'modelName': line[4], 'featureNums': line[5],
+                    'posWeight': line[6], 'createTime': line[7]}
+            res.append(item)
+    f.close()
+    data = {'data': res}
 
     return HttpResponse(json.dumps(data, ensure_ascii=False), content_type='application/json')
 

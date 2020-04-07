@@ -19,7 +19,7 @@
 .darks{color: #000;padding-left: 10px;}
 /*.zwjs{border-top:1px solid #d0cddb;line-height: 26px;padding-top: 5px;color: #999;font-size: 12px;max-height: 84px;overflow: hidden;}*/
 .zwjs{border-top:1px solid #d0cddb;line-height: 26px;padding-top: 5px;color: #999;font-size: 12px;overflow: hidden;}
-.for_btn{position: relative;height:114px;overflow:hidden} /**轮播图里图片的高度*/
+.for_btn{position: relative;height:90px;overflow:hidden} /**轮播图里图片的高度*/
 .in_page{position: absolute;left: 50%;top:50%;width:40px;height: 40px;margin-left: -20px;margin-top: -20px;}
 .in_page>img{width: 40px;height: 40px;}
 
