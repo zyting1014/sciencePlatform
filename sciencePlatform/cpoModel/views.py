@@ -43,10 +43,12 @@ def ajaxGetModel(request):
 
 def ajaxGetTrainTestAuc(request):
     import os
-    BASE_DIR = '/home/tina/zhuyuting/毕设_20200108备份/毕设/实验数据'
+    # BASE_DIR = '/home/tina/zhuyuting/毕设_20200108备份/毕设/实验数据'  # linux
+    BASE_DIR = 'D:\\zhuyuting\\bishe\\实验数据'
     FILE_NAME = '17维原始特征20190701_20190707-20190710_cpo.txt'
     filePath = os.path.join(BASE_DIR, FILE_NAME)
-    f = open(filePath)
+    # f = open(filePath)  # linux
+    f = open(filePath,  encoding="utf-8")
     trainTag = True
     allSampleTrain = 0;posSampleTrain = 0;negSampleTrain = 0
     allSampleTest = 0;posSampleTest = 0;negSampleTest = 0
@@ -101,7 +103,8 @@ def ajaxGetFeatureName(request):
     BASE_DIR = '/home/tina/zhuyuting/毕设_20200108备份/毕设/实验数据'
     fileName = '17维原始特征20190701_20190707-20190710_cpo.txt'  # 这行传入实际的特征文件名
 
-    BASE_DIR1 = '/home/tina/zhuyuting/bishe/jupyterProject/'
+    # BASE_DIR1 = '/home/tina/zhuyuting/bishe/jupyterProject/'
+    BASE_DIR1 = 'D://zhuyuting//bishe//jupyterProject'
 
     if fileName.find("维") != -1:
         featureNum = int(fileName[0:fileName.find("维")])
@@ -114,7 +117,8 @@ def ajaxGetFeatureName(request):
         else:# 34
             filePath = os.path.join(BASE_DIR1, '34_comment.txt')
 
-        f = open(filePath)
+        # f = open(filePath) # linux
+        f = open(filePath, encoding="utf-8")  # windows
         for line in f:
             feature = line[0:line.find(':')].strip()
             meaning = line[line.find(':') + 1:].strip()
@@ -132,4 +136,5 @@ def ajaxGetFeatureName(request):
 
 
 def empty(request):
-    return render(request, 'featureTest.html')
+    return render(request, 'emptyNew.html')
+
