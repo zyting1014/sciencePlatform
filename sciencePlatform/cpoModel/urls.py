@@ -13,7 +13,10 @@ urlpatterns = [
 
     path('ajaxGetModel/', views.ajaxGetModel, name='ajaxGetModel'),  # ajax get方法 获取模型标题表格
     path('ajaxGetTrainTestAuc/', views.ajaxGetTrainTestAuc, name='ajaxGetTrainTestAuc'),  # ajax get方法 获取模型auc&样本数
-    path('ajaxGetFeatureName/', views.ajaxGetFeatureName, name='ajaxGetFeatureName')  # ajax get方法 获取特征名称
+    path('ajaxGetFeatureName/', views.ajaxGetFeatureName, name='ajaxGetFeatureName'),  # ajax get方法 获取特征名称
+    path('ajaxGetCommentCitySatisfy/',views.ajaxGetCommentCitySatisfy,
+         name='ajaxGetCommentCitySatisfy'),  # ajax get方法 获取不同城市满意度
+
 ]
 
 

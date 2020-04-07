@@ -132,7 +132,25 @@ def ajaxGetFeatureName(request):
         return render(request, 'empty.html')
 
 
+def ajaxGetCommentCitySatisfy(request):
+    # data的具体实现
+    import os
+    res = []
+    fileDir = 'D:\\zhuyuting\\bishe\\jupyterProject'
+    filePath = os.path.join(fileDir, 'top30城市满意度.txt')
+    f = open(filePath, 'r', encoding='utf-8')
+    for line in f:
+        if line.find('(') != -1:
+            city = line[1:line.find(',')]
+            line = line[line.find(',') + 1:]
+            orderNum = int(line[0:line.find(',')])
+            line = line[line.find(',') + 1:]
+            satisfyRate = float(line[:-2])
+            res.append({'city': city, 'orderNum': orderNum, 'satisfyRate': satisfyRate})
+    f.close()
+    data = {'data': res}
 
+    return HttpResponse(json.dumps(data, ensure_ascii=False), content_type='application/json')
 
 
 def empty(request):

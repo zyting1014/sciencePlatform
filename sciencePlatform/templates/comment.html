@@ -319,8 +319,9 @@
                       <label>-</label>
                       <input class="form-control" type="number" id="comment-end-hour" name="comment-end-hour" placeholder="24" min="0" max="24">
                     </div>
-                    <div class="form-group" style="float: right;padding-right: 2%;">
-                      <button class="btn btn-primary" type="submit">查找</button>
+                    <div class="form-group" style="float: right;padding-right: 4%;">
+                      <input class="btn btn-secondary" type="submit" value="查找"/>
+<!--                      <button class="btn btn-secondary" type="submit">查找</button>-->
                     </div>
                   </form>
 
@@ -481,8 +482,8 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card">
-              <div class="card-header"><h4>top30城市的客户满意度(升序):</h4></div>
-              <table class="table table-hover">
+              <div class="card-header"><h4>top30城市的客户满意度(降序):</h4></div>
+              <table class="table table-hover" id="comment-city-satisfy">
                   <thead>
                     <tr>
                       <th>#</th>
@@ -491,26 +492,15 @@
                       <th><h4>满意度</h4></th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>康复的家庭</td>
-                      <td>大江健三郎</td>
-                      <td>散文随笔</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>名侦探的规条</td>
-                      <td>东野圭吾</td>
-                      <td>悬疑小说</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>天才相师</td>
-                      <td>打眼</td>
-                      <td>都市小说</td>
-                    </tr>
-                  </tbody>
+                <!-- ajax content -->
+<!--                  <tbody>-->
+<!--                    <tr>-->
+<!--                      <th scope="row">1</th>-->
+<!--                      <td>康复的家庭</td>-->
+<!--                      <td>大江健三郎</td>-->
+<!--                      <td>散文随笔</td>-->
+<!--                    </tr>-->
+<!--                  </tbody>-->
                 </table>
             </div>
           </div>
@@ -544,5 +534,31 @@
 <script src="../static/js/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
 <script src="../static/js/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
 <!--<script type="text/javascript" src="../static/js/main.min.js"></script>-->
+<!--城市满意度-->
+<script type="text/javascript">
+		$(function () {
+          $.ajax({
+            url:"{% url 'ajaxGetCommentCitySatisfy' %}",
+            type:'GET',
+            dataType: 'json',
+            success:function (data) {
+              var tr = '';
+              var count = 0;
+
+              for(i=data.data.length-1;i>=0;i--){ // 逆序遍历
+              // for(i in data.data){
+                count = count + 1
+                var num = count + ''
+                tr = tr + '<tr>' + '<th scope="row">' + num + '</th>' +
+                        '<td>' + data.data[i].city + '</td>' +
+                        '<td>' + data.data[i].orderNum + '</td>' +
+                        '<td>' + data.data[i].satisfyRate + '</td>' + '</tr>'
+              }
+              console.log(tr)
+              $("#comment-city-satisfy").append('<tbody>' + tr + '</tbody>')
+            }
+          })
+		})
+	</script>
 </body>
 </html>
