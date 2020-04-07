@@ -24,6 +24,7 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $('#gallery2 img').fsgallery()
+    $('#gallery3 img').fsgallery()
 })
 </script>
 </head>
@@ -375,28 +376,24 @@
                   <div class="pictureSlider poster-main">
                       <div class="poster-btn poster-prev-btn"></div>
                       <ul id="zturn" class="poster-list">
+
                         <li class="poster-item zturn-item">
-                          <p class="xxgy">学员感言</p>
-                          <p class="say">明月几时有</p>
+<!--                          <p class="xxgy">相似度去重逻辑</p>-->
+                          <p class="say">相似度去重逻辑</p>
                           <div class="for_btn">
 
                             <!-- gallery-->
                             <ul class="thumbnails" id="gallery">
                               <li class="span3">
-                                <a href="../static/images/testimg/1.jpg">
-                                  <img src="../static/images/testimg/1_mini.jpg" alt="" />
+                                <a href="../static/images/dropRoute/dropMethod1.png">
+                                  <img src="../static/images/dropRoute/dropMethod1.png" alt=""/>
                                 </a>
                               </li>
                             </ul>
                             <!--end gallery-->
 
-                            <a href="#" class="in_page"><img src="../static/images/feature/images/iconin.png" /></a>
                           </div>
                           <div class="students_star">
-                            <p class="cell_list"><span class="lf">姓名：<span class="darks">小明</span></span> <span class="rt">薪资 ：<span class="darks">15k</span></span>
-                            </p>
-                            <p class="cell_list"><span>入职：<span class="darks">把酒问青天</span></span>
-                            </p>
                             <div class="zwjs">
                               1.为每条候选路线初始化布尔值，记录是否为top1路线。将候选路线按精排打分排序，第一条路线的设为True，其余为False.
                               2.对每条候选路线初始化布尔值，记录是否被删除。所有路线均为False.
@@ -405,35 +402,38 @@
                           </div>
 						</li>
 
-                        <li class="poster-item  zturn-item" >
-                              <p class="xxgy">f2</p>
-                              <div class="students_star">
-                                  <p class="cell_list"><span class="lf">姓名：<span class="darks">小明</span></span> <span class="rt">薪资 ：<span class="darks">15k</span></span>
-                                  <div class="zwjs">
-                                      1.为每条候选路线初始化布尔值，记录是否为top1路线。将候选路线按精排打分排序，第一条路线的设为True，其余为False.
-                                      2.对每条候选路线初始化布尔值，记录是否被删除。所有路线均为False.
-                                    3.双重循环遍历路线数组，若两条路线的关键途径点相同，且距离差在2km以内，且均未被删除，则进行如下判断：两条路线的并集-交集是否小于阈值？若小于，若两条路线中有top1路线，则将非top1路线删除标记设为True，否则，将距离长的路线删除标记设为True.
-                                  </div>
-                              </div>
-                          </li>
-
-<!--                        <li class="poster-item  zturn-item" >-->
-<!--                              <p class="xxgy">f1</p>-->
-<!--                              <div class="students_star">-->
-<!--                                  <p class="cell_list"><span class="lf">姓名：<span class="darks">小明</span></span> <span class="rt">薪资 ：<span class="darks">15k</span></span>-->
-<!--                                  <div class="zwjs">-->
-<!--                                      自我介绍是向别人展示你自我介绍好不好,甚至直接关系到你给别人的第一印象-->
-<!--                                  </div>-->
-<!--                              </div>-->
-<!--                          </li>-->
-
                         <li class="poster-item zturn-item">
 <!--                          <p class="xxgy">相似度去重逻辑</p>-->
-                          <p class="say">相似度去重逻辑</p>
+                          <p class="say">动态分位数去重逻辑</p>
                           <div class="for_btn">
 
                             <!-- gallery-->
                             <ul class="thumbnails" id="gallery2">
+                              <li class="span3">
+                                <a href="../static/images/dropRoute/dropMethod2.png">
+                                  <img src="../static/images/dropRoute/dropMethod2.png" alt=""/>
+                                </a>
+                              </li>
+                            </ul>
+                            <!--end gallery-->
+
+                          </div>
+                          <div class="students_star">
+                            <div class="zwjs">
+                              1.为每条候选路线初始化布尔值，记录是否为top1路线。将候选路线按精排打分排序，第一条路线的设为True，其余为False.
+                              2.对每条候选路线初始化布尔值，记录是否被删除。所有路线均为False.
+                              3.双重循环遍历路线数组，若两条路线的关键途径点相同，且距离差在2km以内，且均未被删除，则进行如下判断：两条路线的并集-交集是否小于阈值？若小于，若两条路线中有top1路线，则将非top1路线删除标记设为True，否则，将距离长的路线删除标记设为True.
+                            </div>
+                          </div>
+						</li>
+
+                        <li class="poster-item zturn-item">
+<!--                          <p class="xxgy">相似度去重逻辑</p>-->
+                          <p class="say">混合去重逻辑</p>
+                          <div class="for_btn">
+
+                            <!-- gallery-->
+                            <ul class="thumbnails" id="gallery3">
                               <li class="span3">
                                 <a href="../static/images/dropRoute/dropMethod1.png">
                                   <img src="../static/images/dropRoute/dropMethod1.png" alt=""/>
