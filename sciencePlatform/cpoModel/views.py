@@ -104,10 +104,12 @@ def ajaxGetTrainTestAuc(request):
                 posSampleTest = posSample
                 negSampleTest = negSample
 
+
     data = {'train_auc': train_auc, 'test_auc': test_auc,
             'featureKey': featureKey, 'featureImportance': featureImportance,
             'allSampleTrain': allSampleTrain, 'posSampleTrain': posSampleTrain, 'negSampleTrain': negSampleTrain,
             'allSampleTest': allSampleTest, 'posSampleTest': posSampleTest, 'negSampleTest': negSampleTest}
+    print(featureImportance)
 
     return HttpResponse(json.dumps(data, ensure_ascii=False), content_type='application/json')
 
@@ -169,5 +171,5 @@ def ajaxGetCommentCitySatisfy(request):
 
 
 def empty(request):
-    return render(request, 'emptyNew.html')
+    return render(request, 'test.html')
 

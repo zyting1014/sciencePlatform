@@ -413,30 +413,32 @@
         const featureKeys = data.featureKey
         const featureImportance = data.featureImportance
 
+
         // 特征重要性图
+
         new Chart($("#chart-hbar-1"), {
           type: 'horizontalBar',
           data: {
-              labels: featureKeys,
-              p: [{
-                  label: "特征重要性",
-                  backgroundColor: "rgba(51,202,185,0.5)",
-                  borderColor: "rgba(0,0,0,0)",
-                  hoverBackgroundColor: "rgba(51,202,185,0.7)",
-                  hoverBorderColor: "rgba(0,0,0,0)",
-                  data: featureImportance
-              }]
+            labels: featureKeys,
+            datasets: [{
+              label: "特征重要性",
+              backgroundColor: "rgba(51,202,185,0.5)",
+              borderColor: "rgba(0,0,0,0)",
+              hoverBackgroundColor: "rgba(51,202,185,0.7)",
+              hoverBorderColor: "rgba(0,0,0,0)",
+              data: featureImportance
+            }]
           },
           options: {
-              scales: {
-                  xAxes: [{
-                      ticks: {
-                          beginAtZero: true
-                      }
-                  }]
-              }
+            scales: {
+              xAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
           }
-      });
+        });
 
 
         // update table
